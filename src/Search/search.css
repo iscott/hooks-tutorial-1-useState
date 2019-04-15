@@ -1,0 +1,94 @@
+.search-results {
+	display: grid;
+	width: 100%;
+	margin: 0 auto;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-column-gap: 10px;
+	grid-row-gap: 10px;
+}
+
+.field__toggle {
+	display: flex;
+	margin: 0 auto 10px;
+}
+
+.field__toggle button {
+	margin: 0;
+	border-radius: 0;
+	border: 1px solid #ccc;
+}
+
+.field__toggle button:focus {
+	outline: 0;
+}
+
+.field__toggle button.active {
+	background-color: #9c90d8;
+	border-color: #9c90d8;
+	color: white;
+}
+
+.field__toggle button:first-of-type {
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+
+.field__toggle button:last-of-type {
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+
+.search-result {
+	border: 2px solid #ccc;
+	border-radius: 3px;
+	text-align: left;
+	padding: 10px;
+	position: relative;
+}
+
+.search-result__bookmarked-icon {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+
+.search-result__title {
+	margin: 0 0 10px;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.search-result__description {
+	font-style: italic;
+	margin-bottom: 10px;
+}
+
+.search-result h5 {
+	margin: 0.2em 0;
+}
+
+.info-container {
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	padding: 5px 0;
+	margin: 10px 0;
+}
+
+.info__label {
+	color: #777;
+	margin-right: 0.5em;
+}
+
+.info:nth-of-type(3n) .info__value {
+	color: crimson;
+}
+
+.info:nth-of-type(3n + 1) .info__value {
+	color: mediumblue;
+}
+
+.info:nth-of-type(3n + 2) .info__value {
+	color: chocolate;
+}

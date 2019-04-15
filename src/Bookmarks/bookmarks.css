@@ -1,0 +1,18 @@
+.bookmarks-list {
+	text-align: left;
+	border-bottom: 1px solid #ccc;
+}
+
+.bookmarks-list__item {
+	border: 2px solid #ccc;
+	border-radius: 3px;
+	padding: 10px;
+	margin: 10px 0;
+	display: flex;
+	justify-content: flex-start;
+}
+
+.bookmarks-list__item h4,
+.bookmarks-list__item h3 {
+	margin: 0 0.6em;
+}

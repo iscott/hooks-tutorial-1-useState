@@ -1,0 +1,21 @@
+nav {
+	padding: 10px;
+	border-bottom: 1px solid #aaa;
+	display: flex;
+	justify-content: center;
+	width: calc(100% - 5rem);
+	margin: 0 auto;
+}
+
+nav h4 {
+	margin: 0 1em;
+}
+
+nav a {
+	color: #777;
+	text-decoration: none;
+}
+
+nav a.active {
+	color: #77a;
+}
