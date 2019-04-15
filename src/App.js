@@ -14,7 +14,6 @@ class App extends Component {
 	}
 
 	saveBookmark = (type, newBookmark) => {
-		console.log(type)
 		this.setState(currentState => {
 			const { repositories, users } = currentState.bookmarks
 			if (type === 'repositories') {
@@ -38,7 +37,6 @@ class App extends Component {
 	}
 
 	removeBookmark = (type, bookmarkId) => {
-		console.log(type, bookmarkId)
 		this.setState(currentState => {
 			const { repositories, users } = currentState.bookmarks
 			if (type === 'repositories') {
@@ -60,7 +58,6 @@ class App extends Component {
 	}
 
 	render() {
-		console.log(this.state.bookmarks)
 		return (
 			<BrowserRouter>
 				<div className="App">

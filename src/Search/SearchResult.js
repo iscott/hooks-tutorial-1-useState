@@ -17,8 +17,6 @@ const SearchResult = ({
 		}
 	}
 
-	console.log(searchType)
-
 	return (
 		<div className="search-result">
 			{isBookmarked ? (

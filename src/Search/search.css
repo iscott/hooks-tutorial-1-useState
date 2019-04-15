@@ -44,6 +44,7 @@
 	text-align: left;
 	padding: 10px;
 	position: relative;
+	overflow: hidden;
 }
 
 .search-result__bookmarked-icon {

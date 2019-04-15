@@ -21,7 +21,6 @@ class Search extends React.Component {
 	render() {
 		const { searchTerm, searchType } = this.state
 		const { saveBookmark, removeBookmark, bookmarks } = this.props
-		console.log(this.props)
 
 		return (
 			<React.Fragment>
@@ -41,7 +40,11 @@ class Search extends React.Component {
 						</button>
 					</div>
 					<label>Search {searchType}</label>
-					<input onChange={this.updateSearchTerm} name="search" />
+					<input
+						autoComplete="off"
+						onChange={this.updateSearchTerm}
+						name="search"
+					/>
 				</div>
 				<SearchResults
 					searchTerm={searchTerm}

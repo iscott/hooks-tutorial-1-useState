@@ -21,19 +21,30 @@ class SearchResults extends React.Component {
 		}
 	}
 
-	fetchResults = async (
+	fetchTimeout = null
+
+	fetchResults = (
 		searchTerm = this.props.searchTerm,
 		searchType = this.props.searchType,
 	) => {
-		//
-		if (!searchTerm.length) return
+		if (this.fetchTimeout) clearTimeout(this.fetchTimeout)
+		console.log(searchTerm.length, searchTerm)
+		if (!searchTerm.length) {
+			this.setState({ loading: false })
+			return
+		}
 		this.setState({ loading: true })
-		const response = await fetch(
-			`https://api.github.com/search/${searchType}?q=${searchTerm}`,
-		).then(r => r.json())
-		const results = response.items
-		console.log(results)
-		this.setState({ loading: false, results })
+		this.fetchTimeout = setTimeout(async () => {
+			const response = await fetch(
+				`https://api.github.com/search/${searchType}?q=${searchTerm}`,
+			).then(r => r.json())
+			const results = response.items
+			this.setState({ loading: false, results })
+		}, 500)
+	}
+
+	componentWillUnmount = () => {
+		if (this.fetchTimeout) clearTimeout(this.fetchTimeout)
 	}
 
 	isBookmarked = result => {
@@ -46,10 +57,9 @@ class SearchResults extends React.Component {
 		const { searchTerm, saveBookmark, searchType, removeBookmark } = this.props
 		const { results, loading } = this.state
 		if (loading) return <p>Loading...</p>
-		if (results.length === 0) {
-			if (searchTerm.length) return <p>No Results for "{searchTerm}"</p>
-			return <p>Search for something!</p>
-		}
+		if (!searchTerm.length) return <p>Search for something!</p>
+		if (results.length === 0) return <p>No Results for "{searchTerm}"</p>
+
 		return (
 			<div>
 				<p>Search results for "{searchTerm}"</p>
