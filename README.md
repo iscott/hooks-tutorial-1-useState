@@ -9,7 +9,9 @@ The `master` branch is the starting point. The other branches are:
 - `activity-one`: Introducing `useState`, where we will refactor the `<Search>` component.
 - `activity-two`: Introducing `useEffect`, where we will refactor the `<SearchResult>` component.
 - `activity-three`: Introducing `useContext`, where we will extract our bookmarking logic to a context provider.
-- `activity-four`: TBD!
+- `activity-four`: Introducting `useReducer`. The example is a simple Tic Tac Toe game with undo/redo. In the main app, we will enhance the `<BookmarksProvider>` we made previously by replacing `useState` with `useReducer`.
+- `activity-five`: Custom hooks! We will separate out the `fetch` logic we use in `<SearchResult>` to make a general-purpose hook, and use it to 'log in' and get your Github avatar.
+- `activity-six`: TBD! Includes the solution to activity five.
 
 Each subsequent activity branch is the "solution" for the previous activity. (There are many differnet ways to do this, it's just one possible solution!)
 
