@@ -268,7 +268,13 @@ We can call `useState` as many times as we need.
 
 ## Lab 1
 
-First, `git checkout activity-1`. If you haven't already, run `npm install`. Then, `npm run start` - your browser should open to http://localhost:3000, and you should see a `useState` item in the nav bar.
+#### Setup
+
+ - If you haven't already, clone this repo (https://git.generalassemb.ly/good-idea/hooks-tutorial), `cd` into it, and `npm install`
+ - Next, run `git fetch` to retreive the list of remote branches.
+ - Run `git branch --all` - within the output, you should see a list that includes `remotes/origin/activity-one`, `-two`, etc.
+ - Then, `git checkout -b activity-one`. This will create a new branch in your local repo that matches the remote `activity-one` branch.
+ - Finally, `npm run start` - your browser should open to http://localhost:3000, and you should see a `useState` item in the nav bar.
 
 - Look in `HookDemos/UseStateDemo` to see the component rendered at the `useState` route.
 - We'll be refactoring `Search/Search.js`
