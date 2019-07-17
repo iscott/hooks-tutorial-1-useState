@@ -268,6 +268,11 @@ We can call `useState` as many times as we need.
 
 ## Lab 1
 
+First, `git checkout activity-1`. If you haven't already, run `npm install`. Then, `npm run start` - your browser should open to http://localhost:3000, and you should see a `useState` item in the nav bar.
+
+- Look in `HookDemos/UseStateDemo` to see the component rendered at the `useState` route.
+- We'll be refactoring `Search/Search.js`
+
 In this lab, we will refactor the `Search` component in this repo to use hooks. This component is responsible for:
 
 1. Keeping track of the current search type (`repositories` or `users`)
