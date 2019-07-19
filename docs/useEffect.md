@@ -123,7 +123,7 @@ First on the list:
  
 🔎 Back in the browser, enter a search term. (It will run a search with each keypress, so do a small search like 'ab'). Look in your console - you should see it log out the results for each search
 
-### ✅ Step 5: Re-implement the timeout
+### ✅ Step 4: Re-implement the timeout
 
 Now, we'll cover the parts of the last step that we skipped:
 
@@ -165,15 +165,15 @@ useEffect(() => {
   setLoading(true)
   const timeoutId = setTimeout(() => {
     fetch(
-				`https://api.github.com/search/${searchType}?q=${searchTerm}`,
-			)
-				.then(r => r.json())
-				.then(response => {
-					const results = response.items
-          console.log(results)
-          setLoading(false)
-          setResults(results)
-				})
+      `https://api.github.com/search/${searchType}?q=${searchTerm}`,
+    )
+      .then(r => r.json())
+      .then(response => {
+	const results = response.items
+        console.log(results)
+        setLoading(false)
+        setResults(results)
+    })
   }, 500)
 }, [searchType, searchTerm])
 ```
@@ -181,7 +181,7 @@ useEffect(() => {
 🔎 Back in the browser, start typing some search results. You should see updated results in the console - but only after you have finished typing.
 
 
-### ✅ Step65: Re-implement the render
+### ✅ Step 6: Re-implement the render
 
 There are two last thing last things to cover:
 
