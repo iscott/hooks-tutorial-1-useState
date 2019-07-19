@@ -17,14 +17,14 @@ In this lab, we will refactor the `SearchResults` component in this repo to use 
 2. When the component mounts, calls the `fetchResults` method
 3. When the component receives new props, it calls the `fetchResults` method again - but only when the `searchTerm` or `searchType` props have changed
 4. (fetchResults)
-  - If a previous `timeoutId` exists, clears it so it doesn't make an API request with outdated props.
-  - If the search term is empty, return early (don't run the search)
-  - If we're about to run a search, set `loading` to `true`
-  - Starting a timeout of 500ms, and saving that `timeoutId` to a variable, so it can be cleared (canceled) when the component unmounts
-  - After the 500ms, calls `fetch` to get the results
-  - After getting the results, saves that data to `results`
+   - If a previous `timeoutId` exists, clears it so it doesn't make an API request with outdated props.
+   - If the search term is empty, return early (don't run the search)
+   - If we're about to run a search, set `loading` to `true`
+   - Starting a timeout of 500ms, and saving that `timeoutId` to a variable, so it can be cleared (canceled) when the component unmounts
+   - After the 500ms, calls `fetch` to get the results
+   - After getting the results, saves that data to `results`
 5. (componentWillUnmount)
-  - Clears the timeout
+   - Clears the timeout
 6. (isBookmarked) a simple function that looks at the `searchType` and `bookmarks` props to see if a search result has been bookmarked or not. (this gets called in the render method)
 7. Renders out UI based on the state.
 
@@ -40,8 +40,8 @@ import React, { useState, useEffect } from 'react'
 ```
 
 - Create a new Function component named `SearchResults`. Rename the class component to something else so it doesn't conflict - we will remove it when we're done.
- - Have it `return null` for now.
- - Use `React.useState` to initialize `loading` as `false`, and `results` as an empty array.
+  - Have it `return null` for now.
+  - Use `React.useState` to initialize `loading` as `false`, and `results` as an empty array.
 
 
 ### ✅ Step 2: Set up `useEffect`.
@@ -99,12 +99,12 @@ useEffect(() => {
 We'll skip the `setTimeout` business for now, and jump right into making the API call. This step is going to be pretty easy! We'll cover these parts of the process:
 
 4. (fetchResults)
-  - (skipping this) ~If a previous `timeoutId` exists, clears it so it doesn't make an API request with outdated props.~
-  - 👉 If the search term is empty, return early (don't run the search)
-  - 👉 If we're about to run a search, set `loading` to `true`
-  - (skipping this) ~Starting a timeout of 500ms, and saving that `timeoutId` to a variable, so it can be cleared (canceled) when the component unmounts~
-  - 👉 (skipping some of this) ~After the 500ms~, calls `fetch` to get the results
-  - 👉 After getting the results, saves that data to `results`
+   - (skipping this) ~If a previous `timeoutId` exists, clears it so it doesn't make an API request with outdated props.~
+   - 👉 If the search term is empty, return early (don't run the search)
+   - 👉 If we're about to run a search, set `loading` to `true`
+   - (skipping this) ~Starting a timeout of 500ms, and saving that `timeoutId` to a variable, so it can be cleared (canceled) when the component unmounts~
+   - 👉 (skipping some of this) ~After the 500ms~, calls `fetch` to get the results
+   - 👉 After getting the results, saves that data to `results`
 
 First on the list:
 
@@ -129,12 +129,12 @@ Now, we'll cover the parts of the last step that we skipped:
 
 
 4. (fetchResults)
-  - 👉 If a previous `timeoutId` exists, clears it so it doesn't make an API request with outdated props.
-  - (completed) ~If the search term is empty, return early (don't run the search)~
-  - (completed) ~If we're about to run a search, set `loading` to `true`~
-  - 👉 Starting a timeout of 500ms, and saving that `timeoutId` to a variable, so it can be cleared (canceled) when the component unmounts
-  - 👉  After the 500ms, (completed) ~calls `fetch` to get the results~
-  - (completed) ~After getting the results, saves that data to `results`~
+   - 👉 If a previous `timeoutId` exists, clears it so it doesn't make an API request with outdated props.
+   - (completed) ~If the search term is empty, return early (don't run the search)~
+   - (completed) ~If we're about to run a search, set `loading` to `true`~
+   - 👉 Starting a timeout of 500ms, and saving that `timeoutId` to a variable, so it can be cleared (canceled) when the component unmounts
+   - 👉  After the 500ms, (completed) ~calls `fetch` to get the results~
+   - (completed) ~After getting the results, saves that data to `results`~
 
 We'll start with these lines:
 
