@@ -34,12 +34,15 @@ class SearchResults extends React.Component {
 			return
 		}
 		this.setState({ loading: true })
-		this.fetchTimeout = setTimeout(async () => {
-			const response = await fetch(
+		this.fetchTimeout = setTimeout(() => {
+			fetch(
 				`https://api.github.com/search/${searchType}?q=${searchTerm}`,
-			).then(r => r.json())
-			const results = response.items
-			this.setState({ loading: false, results })
+			)
+				.then(r => r.json())
+				.then(response => {
+					const results = response.items
+					this.setState({ loading: false, results })
+				})
 		}, 500)
 	}
 
