@@ -201,3 +201,7 @@ const { bookmarks, saveBookmark, removeBookmark } = useBookmarks()
 const { searchTerm, searchType } = props
 ```
 
+#### ✅Bonus: Update the Provider to use hooks
+
+If you want a little more practice refactoring a Class component to use Hooks!
+
