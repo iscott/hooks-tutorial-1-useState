@@ -54,6 +54,9 @@ export const MyContext = React.createContext()
 export const MyConsumer = MyContext.Consumer
 ```
 
+#### 🔗 [Codesandbox Demo (before)](https://codesandbox.io/s/stupefied-mclaren-me3v2)
+#### 🔗 [Codesandbox Demo (after)](https://codesandbox.io/s/stupefied-mclaren-me3v2)
+
 ## `useMyContext` custom hook
 
 We'll get more into custom hooks in a later lesson, but for now, we can write a simple one that can help you and your collaborators have better feedback when using the hook improperly.
